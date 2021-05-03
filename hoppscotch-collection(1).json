@@ -1,0 +1,66 @@
+[
+  {
+    "name": "My GraphQL Collection",
+    "folders": [],
+    "requests": []
+  },
+  {
+    "name": "TestProdCollection",
+    "folders": [
+      {
+        "name": "Errors",
+        "requests": [
+          {
+            "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+            "query": "mutation {    \n    SaveUser(input: {\n        username: \"userTest1@test8.com\"\n        password: \"passw-Test1\"\n        role: \"User\"\n    })\n}",
+            "headers": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiI3YjMxNzMxYi0yY2Q5LTRkOTEtODExZi1mZGY2MGUxNDhlNTMiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDA4MDAyNCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDA4MzYyNCwiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDA4MDAyNCwiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.oUD2X9vJgcWEy5iJndtgnb_adsNXBkylO8pcR5BXq0Gunk1RTpkCZ6i6lDRlY7l0k-gKSjUTzFPYW7lBifmFWaP06qU1z-w-dxegt7X3JHXEJzrNTflCG5uuACTNRcdXwPGHj0hn-WZ95ecwUHdmmCe-Ar_KHhj1rhgVoT9hdY4oyH7HheFvh-GNnarnLlQxTDlTW4nBz5PNZlYpXJzpFVDd0eLr24QVO25VgDXkZwWzTcWLTbMHClZhvb71ldvHb7GlJxBHnd9rrTEhYcICu2KmS_jsV91VQIU5Gd5gRBI4TiTLJBK0RXSn2e3yOgEHRuEOfn2KdU98VICm-WfNbg"
+              }
+            ],
+            "variables": "{ \"id\": \"799hogucm363v55l7dk2n1l5u0\" }",
+            "name": "SaveUser Error1",
+            "collection": 1
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Query",
+        "requests": [
+          {
+            "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+            "query": "{\n    UserReadModels {\n        id\n        role\n    }\n}",
+            "headers": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiI3YjMxNzMxYi0yY2Q5LTRkOTEtODExZi1mZGY2MGUxNDhlNTMiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDA4MDAyNCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDA4MzYyNCwiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDA4MDAyNCwiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.oUD2X9vJgcWEy5iJndtgnb_adsNXBkylO8pcR5BXq0Gunk1RTpkCZ6i6lDRlY7l0k-gKSjUTzFPYW7lBifmFWaP06qU1z-w-dxegt7X3JHXEJzrNTflCG5uuACTNRcdXwPGHj0hn-WZ95ecwUHdmmCe-Ar_KHhj1rhgVoT9hdY4oyH7HheFvh-GNnarnLlQxTDlTW4nBz5PNZlYpXJzpFVDd0eLr24QVO25VgDXkZwWzTcWLTbMHClZhvb71ldvHb7GlJxBHnd9rrTEhYcICu2KmS_jsV91VQIU5Gd5gRBI4TiTLJBK0RXSn2e3yOgEHRuEOfn2KdU98VICm-WfNbg"
+              }
+            ],
+            "variables": "{ \"id\": \"799hogucm363v55l7dk2n1l5u0\" }",
+            "name": "UserReadModels",
+            "collection": 1
+          }
+        ],
+        "folders": []
+      }
+    ],
+    "requests": [
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": "mutation {    \n    SaveUser(input: {\n        username: \"userTest1@test8.com\"\n        password: \"passwTest1\"\n        role: \"User\"\n    })\n}",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiI3YjMxNzMxYi0yY2Q5LTRkOTEtODExZi1mZGY2MGUxNDhlNTMiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDA4MDAyNCwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDA4MzYyNCwiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDA4MDAyNCwiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.oUD2X9vJgcWEy5iJndtgnb_adsNXBkylO8pcR5BXq0Gunk1RTpkCZ6i6lDRlY7l0k-gKSjUTzFPYW7lBifmFWaP06qU1z-w-dxegt7X3JHXEJzrNTflCG5uuACTNRcdXwPGHj0hn-WZ95ecwUHdmmCe-Ar_KHhj1rhgVoT9hdY4oyH7HheFvh-GNnarnLlQxTDlTW4nBz5PNZlYpXJzpFVDd0eLr24QVO25VgDXkZwWzTcWLTbMHClZhvb71ldvHb7GlJxBHnd9rrTEhYcICu2KmS_jsV91VQIU5Gd5gRBI4TiTLJBK0RXSn2e3yOgEHRuEOfn2KdU98VICm-WfNbg"
+          }
+        ],
+        "variables": "{ \"id\": \"799hogucm363v55l7dk2n1l5u0\" }",
+        "name": "SaveUser Request 1",
+        "collection": 1
+      }
+    ],
+    "flag": "graphql"
+  }
+]
