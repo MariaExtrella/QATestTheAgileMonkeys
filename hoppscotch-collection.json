@@ -1,0 +1,27 @@
+[
+  {
+    "name": "My GraphQL Collection",
+    "folders": [],
+    "requests": []
+  },
+  {
+    "name": "TestDevCollection",
+    "folders": [],
+    "requests": [
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": "mutation {    \n    SaveUser(input: {\n        username: \"userTest1@test1.com\"\n        password: \"passw.Test1\"\n        role: \"User\"\n    })\n}",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJlYjRkODVjYy04ZTg1LTRlMjktYjlmNy1lYTAxNGE4MTgwYjciLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDA3NDg1NiwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDA3ODQ1NiwiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDA3NDg1NiwiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.Qurx4CTMVzqdjV7KnOKXea1VNkwUWyGRv4kKoCPRcfqQwcCndN_sQRBUPo2O0NhGxWbvCYGwEq6PdvGku_iX7li8s3cRYU_OdecumWi7uF7OeZihxZ0l0B5NNKolNlqGPIDDngyxC3sKuw0tBLidAVVcGHpnFhcrLhFFoNe5T4kNORPaElt0WmKC7IAi1WjxDmoxclI1Bw9NuL59ZVcaVcTCsUSVyDlkRbPQF1ITcvpiwtW7IS2EEHkZ05XXjIb3wgUF3zNzf5dWE1evi75X3LsN0hzL2v2VqbyF0b9OGh4RSd0vJdYU8ec-jSCrwIKvXQV5y4-7rciYNSXxeZPg0g"
+          }
+        ],
+        "variables": "{ \"id\": \"799hogucm363v55l7dk2n1l5u0\" }",
+        "name": "FirstSaveUser",
+        "collection": 1
+      }
+    ],
+    "flag": "graphql"
+  }
+]
