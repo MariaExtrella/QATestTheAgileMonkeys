@@ -1,0 +1,125 @@
+[
+  {
+    "name": "My GraphQL Collection",
+    "folders": [],
+    "requests": [
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": " {\n  UserReadModels {\n    id\n    role\n  }\n}",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"id\": \"1\" }",
+        "name": "2-UserReadModels",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": " {\n  CustomerReadModels {\n    id\n    name\n    surname\n    photoUrl\n    userId\n  }\n}",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"id\": \"1\" }",
+        "name": "3-CustomerReadModels",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": " query UserReadModel($id: ID!){\n  UserReadModel(id: $id) {\n    id\n    role\n  }\n}",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"id\": \"userTest2@test8.com\" }",
+        "name": "4-UserReadModel",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": " query CustomerReadModel($id: ID!){\n  CustomerReadModel(id: $id) {\n    id\n    name\n    surname\n    photoUrl\n    userId\n  }\n}",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"id\": \"1\" }",
+        "name": "5-CustomerReadModel",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": "mutation SaveUser($username: String, $password: String, $role: String) {\n    SaveUser(input: {username: $username, password: $password, role: $role})\n}    \n",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"username\": \"user1@user1.com\",\n  \"password\": \"password.User1\",\n  \"role\": \"User\"\n}",
+        "name": "6-SaveUser",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": "mutation SaveCustomer($id: ID, $name: String, $surname: String, $photo: String) {\n    SaveCustomer(input: {id: $id, name: $name, surname: $surname, photo: $photo})\n}    \n",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"username\": \"user1@user1.com\",\n  \"password\": \"password.User1\",\n  \"role\": \"User\"\n}",
+        "name": "7-SaveCustomer",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": "mutation ChangeUserRole($username: String, $role: String) {\n    ChangeUserRole(input: {username: $username, role: $role})\n}    \n",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"username\": \"user1@user1.com\",\n  \"role\": \"User\"\n}",
+        "name": "8-ChangeUserRole",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": "mutation DeleteUser($username: String) {\n    DeleteUser(input: {username: $username})\n}    \n",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"username\": \"user1@user1.com\"}",
+        "name": "10-DeleteUser",
+        "collection": 0
+      },
+      {
+        "url": "https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql",
+        "query": "mutation DeleteCustomer($id: ID) {\n    DeleteCustomer(input: {id: $id})\n}    \n",
+        "headers": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiJiMzY0YmRhYy00NmE1LTRkYWQtYmJiNS0wZjMwMDE1MTMwMTYiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMDUxMzAwNywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMDUxNjYwNywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMDUxMzAwNywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.nkXNTCblpQzTlWpoC4WtMqasD05QWjwrWniSAPIdTgANfBk152chIlGjY95Wqzd6Yx6mEl0AC9PGk4AMCrgIwLDtddzh9OENIRsoYfEOjeHUAqjQHDfbo_-Wn7AKtk6nNIGt4YdOMG4m8XWQvPyXamuUSBt5eXwKVRoiSA96jWGXrj6ECWDWvZq30Y5zCDBIb-NjqtPmtwhcnuPqUUAHK9yhRmeDJ2WdacuHME8EstKVQks6HbAsOlj86HMRQHWncuX2qTFSGMHY70ePWuZ9Nh1IfCiDeN3EKjhXQMId2KsDxM2bndl9YhoTfR74Ndgflti4OnJ8WeK2686ohPmuQA"
+          }
+        ],
+        "variables": "{ \"id\": \"1\"}",
+        "name": "11-DeleteCustomer",
+        "collection": 0
+      }
+    ]
+  }
+]
