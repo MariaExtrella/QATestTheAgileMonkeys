@@ -1,6 +1,11 @@
 # QATestTheAgileMonkeys
 
-QA Test in Prod environment:
+The goal of this practice is to test the backend side for a CRM tool. I have choosen Karate (https://intuit.github.io/karate), an open-source test automation suite by Intuit, for automatizing the tests of the GraphQL API.
+
+In this case of the practice, there are two different environments Dev and Prod in which a user will have to sign in order to get a token for using the GraphQL API.
+
+# Getting started:
+
 
 To get a Token in Hoppscotch https://hoppscotch.io/graphql : 
    In the Inicio menu, import the cURL:
