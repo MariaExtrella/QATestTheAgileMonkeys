@@ -48,7 +48,7 @@ Adn the file [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/bl
 
 In this parctice, there are two different environments: 'Dev' and 'Prod', where an user will have to sign in order to get a token for using the GraphQL API. 
 
-The file karate-config.js has the configuration of environment, so we can configure there the values of the urls. For this, I have configured the karate-config.js file according to the value that I set in the java class TestRunner.java like this:
+The file [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js) has the configuration of environment, so we can configure there the values of the urls. For this, I have configured the [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js) file according to the value that I set in the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/TestRunner.java) like this:
 
       function fn() {
         var env = karate.env; // get system property 'karate.env'
@@ -71,14 +71,14 @@ The file karate-config.js has the configuration of environment, so we can config
 
 so that when any environment is set, the 'Dev' environment whould set by default.
 
-To set the value of 'env', I have introduce this line in the java calss TestRunner.java:
+To set the value of 'env', I have introduce this line in the java calss [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/graphql/TestRunner.java):
 
     @Karate.Test
     Karate testUsers() {
     	System.setProperty("karate.env", "prod");   // set the environment to test
 
 
-In this example, I am testing the 'Pro' environment and so the http url will have the value configured in the karate-config.js:
+In this example, I am testing the 'Pro' environment and so the http url will have the value configured in the [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js):
 
     } else if (env == 'prod') {   // set the http URL for the prod environment
         config.httpUrl = 'https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod';
@@ -102,7 +102,7 @@ I have built the test on three kind of files:
 
 - # Signing in the API to get an authorization token for the admin user:
 
-The first file is signinDatasUser.json whih the JSON body that it is going to be sent in the request to get a token for the admin user: 
+The first file is [signinDatasUser.json](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signinDataUser.json) whih the JSON body that it is going to be sent in the request to get a token for the admin user: 
 
       {
         "clientId": "799hogucm363v55l7dk2n1l5u0",
