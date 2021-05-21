@@ -1,0 +1,3 @@
+mutation SaveCustomer($id: ID, $name: String, $surname: String, $photo: String) {
+    SaveCustomer(input: {id: $id, name: $name, surname: $surname, photo: $photo})
+} 

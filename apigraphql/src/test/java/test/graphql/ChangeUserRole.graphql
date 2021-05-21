@@ -1,0 +1,3 @@
+mutation ChangeUserRole($username: String, $role: String) {
+  ChangeUserRole(input: {username: $username, role: $role})
+}

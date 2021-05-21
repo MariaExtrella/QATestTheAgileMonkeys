@@ -1,0 +1,9 @@
+query CustomerReadModels {
+    CustomerReadModels {
+        id
+        name
+        surname
+        photoUrl
+        userId
+    }
+}

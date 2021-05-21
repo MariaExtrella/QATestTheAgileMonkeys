@@ -1,0 +1,9 @@
+query CustomerReadModel($id: ID!) {
+    CustomerReadModel(id: $id) {
+        id
+        name
+        surname
+        photoUrl
+        userId
+    }
+}

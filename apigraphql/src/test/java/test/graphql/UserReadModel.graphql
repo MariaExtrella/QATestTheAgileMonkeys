@@ -1,0 +1,6 @@
+query UserReadModel($id: ID!) {
+    UserReadModel(id: $id) {
+        id
+        role
+    }
+}
