@@ -28,7 +28,7 @@ For me, the schema of the project is displayed in this picture:
 ![image](https://user-images.githubusercontent.com/83512148/119107469-8b5fdc80-ba1f-11eb-8bba-7cb68533800c.png)
 
 
-Adn the file pom.xml has this configuration after creating the project: 
+Adn the file [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/pom.xml) has this configuration after creating the project: 
 
     <groupId>com.testqagraphql</groupId>
     <artifactId>apigraphql</artifactId>
