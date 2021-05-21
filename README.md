@@ -23,18 +23,16 @@ For the test I have created a maven project in Eclipse using the Karate Maven ar
       -DgroupId=com.mycompany \
       -DartifactId=myproject
 
-For me, the schema of the project is displayed in this picture:
+For me, the schema of the project attached in this repository is displayed in this picture:
 
 ![image](https://user-images.githubusercontent.com/83512148/119107469-8b5fdc80-ba1f-11eb-8bba-7cb68533800c.png)
 
-
-Adn the file [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/pom.xml) has this configuration after creating the project: 
+And the file [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/pom.xml) has this configuration after creating the project: 
 
     <groupId>com.testqagraphql</groupId>
     <artifactId>apigraphql</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
- 
+    <packaging>jar</packaging> 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
@@ -43,10 +41,33 @@ Adn the file [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/bl
         <karate.version>1.0.1</karate.version>
     </properties>    
 
+As Karate support [Junit 5](https://github.com/intuit/karate#junit-5), it is also configured as a dependency in the [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/pom.xml)
+
+          <dependencies>         
+              <dependency>
+                  <groupId>com.intuit.karate</groupId>
+                  <artifactId>karate-junit5</artifactId>
+                  <version>${karate.version}</version>
+                  <scope>test</scope>
+              </dependency>		
+          </dependencies>
+          
+In the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java) we only need an import: 
+
+      package test.graphql;
+      import com.intuit.karate.junit5.Karate;
+
+      class TestRunner {     
+          @Karate.Test
+          Karate testUsers() {
+            System.setProperty("karate.env", "prod");   // set the environment to test
+            // Test that the API met the acceptance criteria for an user different from the admin
+              return Karate.run("Test").relativeTo(getClass());
+          }  
+      }
+
 
 # Files of the package
-
-  - Signing in the API to get an authorization token for the admin user:
   
 I have built the test on three kind of files:
 
@@ -117,7 +138,7 @@ In this example it is displayed a graphql query:
 
 - # Signing in the API to get an authorization token for the admin user:
 
-We have the file [signinDatasUser.json](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signinDatasUser.json) whih the JSON body that it is going to be post in the request to get a token for the admin user: 
+We have the [signinDatasUser.json](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signinDatasUser.json) file whih the JSON body that it is going to be post in the request to get a token for the admin user: 
 
       {
         "clientId": "799hogucm363v55l7dk2n1l5u0",
@@ -131,5 +152,26 @@ The *.feature file to sign in the API to get a token is [signin.feature](https:/
 
 In the [signin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signin.feature) file we define the body of the query as text, as said before, and set the endpoint according to the value of the url set in [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js):
 
-![image](https://user-images.githubusercontent.com/83512148/119137167-cc1c1d80-ba40-11eb-90b1-ef554c0dd027.png)
+      Feature: Get a token for the user to sign in the API
+      Background: Get the environment global variable
+          * url httpUrl
+
+The [signinDatasUser.json](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signinDatasUser.json) file is read as text in the Features that call the [signin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signin.feature)  
+
+    # Read the admin datas from a *.json file
+    * def adminDatas = read('signinDatasUser.json') 
+    ### Call the feature to sign in the API with the JSON file that contains the admin's datas
+    * def signIn = call read('signin.feature') adminDatas
+
+There are three main Features in this test: [TestAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestAdmin.feature), [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature) and [TestFailures.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestFailures.feature) and they are called from the main Feature [Test.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/Test.feature) run as Karate test in the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java):
+
+      @Karate.Test
+          Karate testUsers() {
+            System.setProperty("karate.env", "prod");   // set the environment to test
+            // Test that the API met the acceptance criteria for an user different from the admin
+              return Karate.run("Test").relativeTo(getClass());
+          }
+
+
+
 
