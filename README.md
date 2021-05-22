@@ -245,7 +245,7 @@ The admin user can list all the users of the API and for testing it I have creat
         Then status 200
 
 
-If we take a look at the [UserReadModels.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.graphql) file, it is a simple graphql query which we have to define as text to can be post to the endpoint:
+If we take a look at the [UserReadModels.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.graphql) file, it is a simple graphql query which we have to define as text to be posted to the endpoint:
 
       query UserReadModels {
           UserReadModels {
@@ -254,14 +254,15 @@ If we take a look at the [UserReadModels.graphql](https://github.com/MariaExtrel
           }
       }
       
- According to the acceptance criteria, that query isn't allowed to a not admin user. 
+ According to the acceptance criteria, that query isn't allowed for not admin users. 
  
  
  [UserReadModel.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.feature):
  
- This is a query allowed only for the admin user and it is called passing the id of the user wanted to list as input parameter.
+
+This is a query allowed only for the admin user and it is called passing the id of the user wanted to list as input parameter.
  
- The body of the query is the [UserReadModel.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModel.graphql) file that contains the graphql query. It is called from the main three Features ([TestAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestAdmin.feature), [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature) and [TestFailures.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestFailures.feature)) like this:
+ The body of the query is the [UserReadModel.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModel.graphql) file which contains the graphql query. It is called from the main three Features ([TestAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestAdmin.feature), [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature) and [TestFailures.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestFailures.feature)) like this:
  
     ### List one user by id to check that the role has been changed 
     # Define the id for the query
@@ -274,15 +275,16 @@ If we take a look at the [UserReadModels.graphql](https://github.com/MariaExtrel
     * def listUserbyId = call read('UserReadModel.feature') userToken    
     * match listUserbyId.response.data.UserReadModel == {id: '#(first_user.id)', role: '#(first_user.role)' }
  
- The response must be a JSON with the username and the role of the user in the case that it exists or with a error.message full in the case that the user doesn't.
+
+The response must be a JSON with the username and the user's role in the case that it exists or with an error.message full in the case that the user doesn't.
  
- This is an example of the response of this query:
+This is an example of the response to this query:
  
        1 < X-Amz-Cf-Id: JqnTX9kzJKiKwtt2ABa8bjK7oeqUfH-o7LKsFv7ZElX1gnQttjNoVQ==
       {"data":{"UserReadModel":{"role":"role changed","id":"username0@test.com"}}}
       
  
- This test must response an error in the case of a not admin user telling that the access is denied:
+This test must response with an error in the case of a not admin user telling that the access is denied:
  
        1 < X-Amz-Cf-Id: 9BVtJkYaWWIOAj4s0ScmLFOarOZcKwkivk-LjC7QLAOTEp8N77-wFw==
       {"data":{"UserReadModel":null},"errors":[{"path":["UserReadModel"],"locations":[{"line":2,"column":5}],"message":"Access denied for read model UserReadModel"}]}
@@ -302,9 +304,10 @@ This is a feature allowed both admin and not admin users. The body of the reques
           }
       }
             
+
 This Feature is called from the three main Features and it hasn't input parameters:
 
-     * def queryCustomerReadModels = read('CustomerReadModels.graphql')    
+    * def queryCustomerReadModels = read('CustomerReadModels.graphql')    
      Given path 'graphql'
      And header Authorization = userToken.tokenType + ' ' + userToken.idToken  	 
      And request { query: '#(queryCustomerReadModels)'} 
@@ -326,6 +329,7 @@ This query is also allowed both admin and not admin users and it has the id of t
           }
       }
 
+
 It is called from the three main Features in the same way:
 
     Scenario: List a customer by id
@@ -337,7 +341,8 @@ It is called from the three main Features in the same way:
   	 When method post
        Then status 200
        
-The response is a JSON with the customer datas or a null value in the case that it doesn't exist, but not an error.
+
+The response is a JSON with the customer's datas or a null value in the case that it doesn't exist, but not an error.
 
 
 - # Mutations:
@@ -348,12 +353,14 @@ We need to test that the API met the acceptance criteria for these commands and 
 
 [SaveUsers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveUsers.feature):
 
-This file contains a JavaScript function to create some new user. It contains a [Scenario Outline](https://github.com/intuit/karate#dynamic-scenario-outline), what it means that it receives dinamic datas as JSON. This function is defined in the Backgroud part of the Feature file:
+
+This file contains a JavaScript function to create some new user. It contains a [Scenario Outline](https://github.com/intuit/karate#dynamic-scenario-outline), what means that it receives dinamic datas as JSON. This function is defined in the Backgroud part of the *.feature file:
 
         # Define a function to generate Users  
         * def generatorUser = function(i){ if (i == 3) return null; return { username: 'username' + i + '@test.com', password: 'Password_1', role: 'User' } }  
         
-and it is called defining like text every JSON returned and using it in the body of the post request:
+
+and it is called defining like text every JSON returned for the JS function and using it in the body of the post request:
 
 
         Scenario Outline: Save a new User
@@ -377,12 +384,12 @@ and it is called defining like text every JSON returned and using it in the body
             | generatorUser |	
   
   
-As result of this Feature we have three new users created by three post requests like this:
+As result we have three new users created by three post requests like this:
 
       {"password":"Password_1","role":"User","username":"username2@test.com"}
       
       
-This request is only allowed to the admin user and in the case of not admin users it must return an error message of 'Access denied'. THis response it is matched in the test in this way:
+This request is only allowed to the admin user and in the case of not admin users it must return an error message of 'Access denied'. This response is matched in the test in this way:
 
     * def saveUser = call read('SaveUser.feature') userToken 
     * def expected = 
@@ -396,7 +403,8 @@ This request is only allowed to the admin user and in the case of not admin user
 
 [SaveUser.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveUser.feature):
 
-This Feature file is just like the above, but it doesn't generate a new user but it receives datas through a text created in the main Feature that calls:
+
+This Feature file is just like the above, but it doesn't generate a new user but receives datas through a text created in the main calling Feature:
 
     # The body of the graphql request is a JSON with the generated values
     * def newUser = 
@@ -412,9 +420,10 @@ This Feature file is just like the above, but it doesn't generate a new user but
 
 [ChangeUserRole.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/ChangeUserRole.feature):
 
-This file changes the role of a given user and it is allowed only for admin datas.
 
-To test it, this file get the username of the user and the new role we want to configure as a text created in the main Feature that calls it:
+This Feature changes the role of a given user and it is allowed only for admin users.
+
+To test it, this file get the username of the user and the new role we want to configure as a text created in the main calling Feature:
 
     * def userChangeRole = 
     """
@@ -433,7 +442,7 @@ The body of the request is read from the [ChangeUserRole.graphql](https://github
       }
 
 
-The response of the post query must contain an 'Access denied' error message in the case of not admin users, which it is matched like this:
+The response to the post query must contain an 'Access denied' error message in the case of not admin users, which is matched in this way in the test:
 
     * def saveUser = call read('SaveUser.feature') userToken 
     * def expected = 
@@ -447,7 +456,8 @@ The response of the post query must contain an 'Access denied' error message in 
 
 [DeleteUser.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/DeleteUser.feature):
 
-This Feature gets the username of the wanted to delete user and it post the request with the graphql query and the username as the body:
+
+This Feature gets the username of the wanted to delete user and it posts the request with the graphql query and the username in the body:
 
        Scenario: Delete a user
           # The query is read from a *.graphql file
@@ -465,7 +475,8 @@ The query is read from the [DeleteUser.graphql](https://github.com/MariaExtrella
           DeleteUser(input: {username: $username})
       }
 
- This query isn't allowed for not admin users and it must response with an "Access denied" message error:
+
+This query isn't allowed for not admin users and it must response with an "Access denied" message error:
  
     * def expected = 
     """
@@ -476,4 +487,5 @@ The query is read from the [DeleteUser.graphql](https://github.com/MariaExtrella
     * match deleteUser.response.errors contains deep expected
     
     
+ 
  
