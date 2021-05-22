@@ -200,7 +200,7 @@ The [signinDatasUser.json](https://github.com/MariaExtrella/QATestTheAgileMonkey
     ### Call the feature to sign in the API with the JSON file that contains the admin's datas
     * def signIn = call read('signin.feature') adminDatas
 
-The response of the post, if everything goes fine has the idToken which we will use in every query. As it is a JSON response, it is saved in a variable an from it we'll get the authentication:
+The response to the post, if everything goes fine has the idToken which we will use in every query. As it is a JSON response, it is saved in a variable an from it we'll get the authentication:
 
         Scenario: obtain a token for the admin user
            * def query = 
@@ -223,12 +223,12 @@ This is an example of the response to the sign in query:
 
       1 < X-Amz-Cf-Id: dHUylYCV1VCP_MFRZ9sdOJr2otbAy6c0pU4v2I8n_ig-C8zjHenujg==              {"expiresIn":"3600","idToken":"eyJraWQiOiJb20ROZ0[...]","accessToken":"eyJraWQiOiJIcWFQ[...]","tokenType":"Bearer","refreshToken":"eyJjdHkiOiJKV1Q[...]"}  
 
-Once the user has the token, the queries can be post to the endpoint.
+Once the user has the token, the queries can be posted to the endpoint.
 
 
 - # Queries:
 
-We need to test that the API met the acceptance criteria for the admin user and for that I have created the following *.feature files:
+We need to test that the API mets the acceptance criteria for both admin and not admin users, and for that I have created the following *.feature files:
 
 [UserReadModels.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.feature):
 
