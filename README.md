@@ -1,10 +1,13 @@
 # QATestTheAgileMonkeys
 
+
 The goal of this practice is to test the backend side for a CRM tool. 
 
 I have choosen [Karate](https://intuit.github.io/karate), an open-source test automation suite by Intuit, for automatizing the tests of the GraphQL API so that it could be easily integrated in a CI/CD process.
 
+
 # Requirements
+
 
 To execute this test, it is needed to have installed:
 - [JDK 16.0.1](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html)
@@ -13,6 +16,7 @@ To execute this test, it is needed to have installed:
 
 
 # Getting started
+
 
 For the test I have created a maven project in Eclipse using the Karate Maven archetype because it was easier for me to have already the project skeleton, but if you see the oficial respository of [Karate](https://intuit.github.io/karate), it is possible to do with one command:
 
@@ -23,9 +27,11 @@ For the test I have created a maven project in Eclipse using the Karate Maven ar
       -DgroupId=com.mycompany \
       -DartifactId=myproject
 
+
 For me, the schema of the project attached in this repository is displayed in this picture:
 
 ![image](https://user-images.githubusercontent.com/83512148/119107469-8b5fdc80-ba1f-11eb-8bba-7cb68533800c.png)
+
 
 And the file [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/pom.xml) has this configuration after creating the project: 
 
@@ -41,6 +47,7 @@ And the file [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/bl
         <karate.version>1.0.1</karate.version>
     </properties>    
 
+
 As Karate support [Junit 5](https://github.com/intuit/karate#junit-5), it is also configured as a dependency in the [pom.xml](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/pom.xml):
 
           <dependencies>         
@@ -52,6 +59,7 @@ As Karate support [Junit 5](https://github.com/intuit/karate#junit-5), it is als
               </dependency>		
           </dependencies>
           
+
 In the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java) we only need an import: 
 
       package test.graphql;
@@ -67,8 +75,10 @@ In the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAg
       }
 
 
+
 # Files of the package
   
+
 I have built the test on three kind of files:
 
    - *.features: contain the steps of the tests. Some of them are callable and needed an input parameter, in the case of this parctice, it whould be a JSON field.
@@ -77,7 +87,9 @@ I have built the test on three kind of files:
    - *.java: the java file which contains the class that ran the karate test.
 
 
+
 # Set the environment to test
+
 
 In this parctice, there are two different environments: 'Dev' and 'Prod', where an user will have to sign in order to get a token for using the GraphQL API. 
 
@@ -120,6 +132,7 @@ In this example, I am testing the 'Pro' environment and so the http url will hav
 
 
 # Feature files
+
 
 A *.feature in Karate has the [syntax](https://github.com/intuit/karate#syntax-guide) Feature, Background and Scenario in Karate. 
 Background is optional, but it is where we can define global variables for all the scenarios and in the case of this practice, I used it for the endpoint.
@@ -178,6 +191,7 @@ We have the [signinDatasUser.json](https://github.com/MariaExtrella/QATestTheAgi
         "password": "Admin.2020"
       }
 
+
 I have prefered to use a json file for the parameters, but it also could be writen in the file *.feature that contains the request, but it whould be done as text, because in [Karate](https://intuit.github.io/karate), the body of the request has to go as text.
 
 
@@ -200,6 +214,7 @@ The [signinDatasUser.json](https://github.com/MariaExtrella/QATestTheAgileMonkey
     ### Call the feature to sign in the API with the JSON file that contains the admin's datas
     * def signIn = call read('signin.feature') adminDatas
 
+
 The response to the post, if everything goes fine has the idToken which we will use in every query. As it is a JSON response, it is saved in a variable an from it we'll get the authentication:
 
         Scenario: obtain a token for the admin user
@@ -219,14 +234,17 @@ The response to the post, if everything goes fine has the idToken which we will 
           #Get the idToken for the user
           * def tokenid = response.idToken
 
+
 This is an example of the response to the sign in query:
 
       1 < X-Amz-Cf-Id: dHUylYCV1VCP_MFRZ9sdOJr2otbAy6c0pU4v2I8n_ig-C8zjHenujg==              {"expiresIn":"3600","idToken":"eyJraWQiOiJb20ROZ0[...]","accessToken":"eyJraWQiOiJIcWFQ[...]","tokenType":"Bearer","refreshToken":"eyJjdHkiOiJKV1Q[...]"}  
+
 
 Once the user has the token, the queries can be posted to the endpoint.
 
 
 - # Queries:
+
 
 We need to test that the API mets the acceptance criteria for both admin and not admin users, and for that I have created the following *.feature files:
 
@@ -254,7 +272,8 @@ If we take a look at the [UserReadModels.graphql](https://github.com/MariaExtrel
           }
       }
       
- According to the acceptance criteria, that query isn't allowed for not admin users. 
+
+According to the acceptance criteria, this query isn't allowed for not admin users. 
  
  
  [UserReadModel.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.feature):
@@ -262,7 +281,8 @@ If we take a look at the [UserReadModels.graphql](https://github.com/MariaExtrel
 
 This is a query allowed only for the admin user and it is called passing the id of the user wanted to list as input parameter.
  
- The body of the query is the [UserReadModel.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModel.graphql) file which contains the graphql query. It is called from the main three Features ([TestAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestAdmin.feature), [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature) and [TestFailures.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestFailures.feature)) like this:
+The body of the query is the [UserReadModel.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModel.graphql) file which contains the graphql query. It is called from the main three Features ([TestAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestAdmin.feature), [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature) and [TestFailures.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestFailures.feature)) like this:
+
  
     ### List one user by id to check that the role has been changed 
     # Define the id for the query
@@ -290,7 +310,9 @@ This test must response with an error in the case of a not admin user telling th
       {"data":{"UserReadModel":null},"errors":[{"path":["UserReadModel"],"locations":[{"line":2,"column":5}],"message":"Access denied for read model UserReadModel"}]}
 
 
+
 [CustomerReadModels.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/CustomerReadModels.feature):
+
 
 This is a feature allowed both admin and not admin users. The body of the request is the [CustomerReadModel.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/CustomerReadModel.graphql) which contains the graphql query:
 
@@ -316,6 +338,7 @@ This Feature is called from the three main Features and it hasn't input paramete
 
 
 [CustomerReadModel.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/CustomerReadModel.feature):
+
 
 This query is also allowed both admin and not admin users and it has the id of the customer as input parameter. The body of the request is the [CustomerReadModel.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/CustomerReadModel.graphql):
 
@@ -348,7 +371,7 @@ The response is a JSON with the customer's datas or a null value in the case tha
 - # Mutations:
 
 
-We need to test that the API met the acceptance criteria for these commands and for that I have created the following files:
+We need to test that the API mets the acceptance criteria for these commands, and for that I have created the following files:
 
 
 [SaveUsers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveUsers.feature):
@@ -389,6 +412,7 @@ As result we have three new users created by three post requests like this:
       {"password":"Password_1","role":"User","username":"username2@test.com"}
       
       
+
 This request is only allowed to the admin user and in the case of not admin users it must return an error message of 'Access denied'. This response is matched in the test in this way:
 
     * def saveUser = call read('SaveUser.feature') userToken 
@@ -399,6 +423,7 @@ This request is only allowed to the admin user and in the case of not admin user
     }
     """
     * match saveUser.response.errors contains deep expected   
+
 
 
 [SaveUser.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveUser.feature):
