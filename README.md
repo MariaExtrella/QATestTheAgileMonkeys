@@ -1,12 +1,16 @@
 # QATestTheAgileMonkeys
 
 
+
 The goal of this practice is to test the backend side for a CRM tool. 
 
 I have choosen [Karate](https://intuit.github.io/karate), an open-source test automation suite by Intuit, for automatizing the tests of the GraphQL API so that it could be easily integrated in a CI/CD process.
 
 
+
+
 # Requirements
+
 
 
 To execute this test, it is needed to have installed:
@@ -15,7 +19,11 @@ To execute this test, it is needed to have installed:
 - [Eclipse](https://www.eclipse.org/ )
 
 
+
+
 # Getting started
+
+
 
 
 For the test I have created a maven project in Eclipse using the Karate Maven archetype because it was easier for me to have already the project skeleton, but if you see the oficial respository of [Karate](https://intuit.github.io/karate), it is possible to do with one command:
@@ -88,7 +96,10 @@ I have built the test on three kind of files:
 
 
 
+
 # Set the environment to test
+
+
 
 
 In this parctice, there are two different environments: 'Dev' and 'Prod', where an user will have to sign in order to get a token for using the GraphQL API. 
@@ -243,14 +254,18 @@ This is an example of the response to the sign in query:
 Once the user has the token, the queries can be posted to the endpoint.
 
 
+
 - # Queries:
+
 
 
 We need to test that the API mets the acceptance criteria for both admin and not admin users, and for that I have created the following *.feature files:
 
+
 [UserReadModels.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.feature):
 
 The admin user can list all the users of the API and for testing it I have created this file in which the body of the post request is the [UserReadModels.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.graphql) file. For the post request the authentication header is set with the tokenType and the idToken of the response to the [signin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signin.feature):
+
 
      Scenario: List the users
         # The query is read from a *.graphql file
@@ -276,7 +291,8 @@ If we take a look at the [UserReadModels.graphql](https://github.com/MariaExtrel
 According to the acceptance criteria, this query isn't allowed for not admin users. 
  
  
- [UserReadModel.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.feature):
+ 
+[UserReadModel.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.feature):
  
 
 This is a query allowed only for the admin user and it is called passing the id of the user wanted to list as input parameter.
@@ -374,6 +390,7 @@ The response is a JSON with the customer's datas or a null value in the case tha
 We need to test that the API mets the acceptance criteria for these commands, and for that I have created the following files:
 
 
+
 [SaveUsers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveUsers.feature):
 
 
@@ -443,6 +460,7 @@ This Feature file is just like the above, but it doesn't generate a new user but
     * def saveUser = call read('SaveUser.feature') userToken 
 
 
+
 [ChangeUserRole.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/ChangeUserRole.feature):
 
 
@@ -460,7 +478,9 @@ To test it, this file get the username of the user and the new role we want to c
     * def change_role = call read('ChangeUserRole.feature') userToken
 
 
+
 The body of the request is read from the [ChangeUserRole.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/ChangeUserRole.graphql) file which contais the graphql query:
+
 
       mutation ChangeUserRole($username: String, $role: String) {
         ChangeUserRole(input: {username: $username, role: $role})
@@ -477,7 +497,8 @@ The response to the post query must contain an 'Access denied' error message in 
     }
     """
     * match saveUser.response.errors contains deep expected   
-    
+
+
 
 [DeleteUser.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/DeleteUser.feature):
 
@@ -512,5 +533,96 @@ This query isn't allowed for not admin users and it must response with an "Acces
     * match deleteUser.response.errors contains deep expected
     
     
- 
- 
+    
+[SaveCusotmers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomers.feature):
+
+
+This file contains a JS function in the Background to generate new customers as JSON:
+
+    # Define a function to generate Customers 
+    * def generatorCustomer = function(i){ if (i == 3) return null; return { idCust: 'Cust' + i, nameCust: 'Cutomer Name', surnameCust: 'Customer Surname', photoCust:    'photo.jpg' } }  
+  		 
+
+In the Scenario Outline, the graphql query is read from the [SaveCustomer.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomer.graphql) file:
+
+	mutation SaveCustomer($id: ID, $name: String, $surname: String, $photo: String) {
+	    SaveCustomer(input: {id: $id, name: $name, surname: $surname, photo: $photo})
+	} 
+
+
+and every new customer is defined as text and with the graphql query define the body of the post request:
+
+    * def querySaveCustomer = read('SaveCustomer.graphql')     
+    # The body of the graphql request is a JSON with the generated values
+    * def newCust = 
+    """
+    { 
+    "id": "#(idCust)", 
+    "name": "#(nameCust)", 
+    "surname": "#(surnameCust)",
+    "photo": "#(photoCust)"
+    }
+    """	 
+    Given path 'graphql'
+    And header Authorization = userToken.tokenType + ' ' + userToken.idToken  	 
+    And request { query: '#(querySaveCustomer)',  variables: '#(newCust)'  } 
+    When method post
+    Then status 200
+
+
+Both admin and not admin users can create new customers and, according to the acceptance criteria, fields 'id', 'name' and 'surname' are mandatory. To test this I have created the [SaveCustomer.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomer.featrue) file that read the same [SaveCustomer.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomer.graphql) file and define the body of the post request with the id of the customer wanted to created, but in this case only the id of the customer is passed as parameter:
+
+
+    # It should fail because they are mandatory fields
+    * def newCustomer = 
+    """
+    {
+       "id": "idCustomer"
+    }
+    """"    
+    * def saveCustomer = call read('SaveCustomer.feature') userToken 
+
+The response must contains an error message.
+
+
+[SaveCustomerNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomers.feature):
+
+
+This Feature is equal to [SaveCusotmers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomers.feature) but it is called from the main Feature [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature)) to save customers by a not admin user. I have created it to distinguish them from those saved by the admin user and test that when a customer is updated, it has the reference of the last user who modified it. This is tested taking a customer from the list of all saved and modifying their 'name', 'surname' and 'photoURL' fields:
+
+
+    * def first_customer = listCustomers.response.data.CustomerReadModels[0]      
+    * set first_customer.name = "name changed"
+    * set first_customer.surname = "surname changed" 
+    * set first_customer.photoURL = "newPhoto.jpg"     
+    * def updateCustomer = call read('SaveCustomer.feature') userToken
+
+
+and after list the user by id, the response is match with the expected values:
+
+	* match listCustomerId.response.data.CustomerReadModel == {id: '#(first_customer.id)', name: '#(first_customer.name)', surname: '#(first_customer.surname)', photoUrl: '#(first_customer.photoURL)', userId: '#(newUser.username)' }
+	
+
+
+[DeleteCustomer.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/DeleteCustomer.feature):
+
+
+In this Feature, the body of the post request is defined by the graphql query read from the [DeleteCustomer.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/DeleteCustomer.graphql) file:
+
+	mutation DeleteCustomer($id: ID) {
+	    DeleteCustomer(input: {id: $id})
+	} 
+
+The customer's id to delete is taken from the list of all customers, defined as text and passed as parameter:
+
+    * def queryDeleteCustomer = read('DeleteCustomer.graphql') 	 
+     Given path 'graphql'
+     And header Authorization = userToken.tokenType + ' ' + userToken.idToken  	 
+     And request { query: '#(queryDeleteCustomer)',  variables: '#(customerDelete)'  } 
+     When method post
+     Then status 200
+
+
+Both admin and not admin users can delete customers. 
+
+
