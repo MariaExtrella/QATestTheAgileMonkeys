@@ -62,7 +62,9 @@ As Karate support [Junit 5](https://github.com/intuit/karate#junit-5), it is als
           </dependencies>
           
 
+
 In the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java) only an import is needed: 
+
 
       package test.graphql;
       import com.intuit.karate.junit5.Karate;
@@ -78,14 +80,17 @@ In the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAg
 
 
 
+
 # Files of the package
+
+
   
 The test is built on three kind of files:
 
-   - *.features: contain the steps of the tests. Some of them are callable and needed an input parameter, in the case of this parctice, it whould be a JSON field.
+   - *.features: contain the steps of the tests. Some of them are callable and need as input paramete a JSON field.
    - *.graphql: contain the queries and mutations graphql to send via POST to the graphql API.
-   - *.json: files with datas for the users and customers used in the tests.
-   - *.java: the java file which contains the class that ran the karate test.
+   - *.json: files with credentials of the admin user of the graphql API.
+   - *.java: contains the class that run the Karate test.
 
 
 
@@ -95,9 +100,9 @@ The test is built on three kind of files:
 
 
 
-In this parctice, there are two different environments: 'Dev' and 'Prod', where an user will have to sign in order to get a token for using the GraphQL API. 
+In this test, there are two different environments: 'Dev' and 'Prod', where users have to sign in order to get a token for using the GraphQL API. 
 
-The file [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js) has the configuration of environment, so it is possible to configure there the values of the urls. For this test, the [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js) file according to the value that I set in the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java) is configured like this:
+The file [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js) has the configuration of the environment and it is possible to configure in it the url of the end points. For this test, the [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js) file, according to the value set in the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java) is configured like this:
 
       function fn() {
         var env = karate.env; // get system property 'karate.env'
@@ -127,7 +132,7 @@ To set the value of 'env', this line is introduced in the java calss [TestRunner
     	System.setProperty("karate.env", "prod");   // set the environment to test
 
 
-In this example,the 'Pro' environment it is testing, so the http url has the value configured in the [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js):
+In this example,the 'Pro' environment is tested, so the http url has the value configured in the [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js):
 
     } else if (env == 'prod') {   // set the http URL for the prod environment
         config.httpUrl = 'https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod';
@@ -156,7 +161,9 @@ In this example it is displayed a graphql query:
 # Test step by step
 
 
+
 - # Signing in the API to get an authorization token for the admin user:
+
 
 There are three main Features in this test: [TestAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestAdmin.feature), [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature) and [TestFailures.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestFailures.feature) and they are called from the main Feature [Test.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/Test.feature) run as Karate test in the java class [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java):
 
@@ -166,6 +173,7 @@ There are three main Features in this test: [TestAdmin.feature](https://github.c
             // Test that the API met the acceptance criteria for an user different from the admin
               return Karate.run("Test").relativeTo(getClass());
           }
+
 
 
 The three Features are called from [Test.feature]((https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/Test.feature)). They are called using the keyword [call](https://github.com/intuit/karate#call) and each of them is a new Scenario:
@@ -196,10 +204,10 @@ This package contains the [signinDatasUser.json](https://github.com/MariaExtrell
       }
 
 
-In this test it is used a json file for the parameters, but it also can be writen in the file *.feature that contains the request, but as text, because in [Karate](https://intuit.github.io/karate), the body of the request goes as text.
+In this test a JSON file is used for the parameters, but it also can be writen in the file *.feature that contains the request, but as text, because in [Karate](https://intuit.github.io/karate), the body of the request goes as text.
 
 
-The *.feature file to sign in the API to get a token is [signin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signin.feature). There, the values of the json file are taken and put into text, so it is the same as write them as text from the begining, but as it is the admin user and it won't change, so it is used a json file in this test.
+The *.feature file to sign in the API to get a token is [signin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signin.feature). Inside it, the values of the json file are taken and put into text, so it is the same as write them as text from the begining, but using a JSON file do easier to adapt the test to any admin user and, in case that the user update any of its datas, only changes in the JSON file are needed..
 
 
 In the [signin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/signin.feature) file the body of the query is defined as text, as said before, and set the endpoint according to the value of the url set in [karate-config.js](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/karate-config.js):
@@ -285,9 +293,11 @@ Taken a look at the [UserReadModels.graphql](https://github.com/MariaExtrella/QA
 According to the acceptance criteria, this query isn't allowed for not admin users. 
  
  
+
  
 [UserReadModel.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/UserReadModels.feature):
  
+
 
 This is a query allowed only for the admin user and it is called passing the id of the user wanted to list as input parameter.
  
@@ -337,6 +347,7 @@ This is a feature allowed both admin and not admin users. The body of the reques
       }
             
 
+
 This Feature is called from the three main Features and it hasn't input parameters:
 
     * def queryCustomerReadModels = read('CustomerReadModels.graphql')    
@@ -347,7 +358,10 @@ This Feature is called from the three main Features and it hasn't input paramete
      Then status 200
 
 
+
+
 [CustomerReadModel.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/CustomerReadModel.feature):
+
 
 
 This query is also allowed both admin and not admin users and it has the id of the customer as input parameter. The body of the request is the [CustomerReadModel.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/CustomerReadModel.graphql):
@@ -378,14 +392,19 @@ It is called from the three main Features in the same way:
 The response is a JSON with the customer's datas or a null value in the case that it doesn't exist, but not an error.
 
 
+
+
 - # Mutations:
 
 
-It is needed to test that the API mets the acceptance criteria for these commands and for that, following files are created:
+
+
+It is needed to test that the API mets the acceptance criteria for some commands and for that, following files are created:
 
 
 
 [SaveUsers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveUsers.feature):
+
 
 
 This file contains a JavaScript function to create some new user. It contains a [Scenario Outline](https://github.com/intuit/karate#dynamic-scenario-outline), what means that it receives dinamic datas as JSON. This function is defined in the Backgroud part of the *.feature file:
@@ -437,7 +456,9 @@ This request is only allowed to the admin user and in the case of not admin user
 
 
 
+
 [SaveUser.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveUser.feature):
+
 
 
 This Feature file is just like the above, but it doesn't generate a new user but receives datas through a text created in the main calling Feature:
@@ -455,7 +476,9 @@ This Feature file is just like the above, but it doesn't generate a new user but
 
 
 
+
 [ChangeUserRole.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/ChangeUserRole.feature):
+
 
 
 This Feature changes the role of a given user and it is allowed only for admin users.
@@ -494,7 +517,9 @@ The response to the post query must contain an 'Access denied' error message in 
 
 
 
+
 [DeleteUser.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/DeleteUser.feature):
+
 
 
 This Feature gets the username of the wanted to delete user and it posts the request with the graphql query and the username in the body:
@@ -527,8 +552,10 @@ This query isn't allowed for not admin users and it must response with an "Acces
     * match deleteUser.response.errors contains deep expected
     
     
+
     
 [SaveCusotmers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomers.feature):
+
 
 
 This file contains a JS function in the Background to generate new customers as JSON:
@@ -579,7 +606,9 @@ Both admin and not admin users can create new customers and, according to the ac
 The response must contains an error message.
 
 
+
 [SaveCustomerNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomers.feature):
+
 
 
 This Feature is equal to [SaveCusotmers.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/SaveCustomers.feature) but it is called from the main Feature [TestNotAdmin.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestNotAdmin.feature)) to save customers by a not admin user. It is created to distinguish them from those saved by the admin user and test that when a customer is updated, it has the reference of the last user who modified it. This is tested taking a customer from the list of all saved and modifying their 'name', 'surname' and 'photoURL' fields:
@@ -598,7 +627,9 @@ and after list the user by id, the response is match with the expected values:
 	
 
 
+
 [DeleteCustomer.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/DeleteCustomer.feature):
+
 
 
 In this Feature, the body of the post request is defined by the graphql query read from the [DeleteCustomer.graphql](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/DeleteCustomer.graphql) file:
@@ -621,7 +652,9 @@ Both admin and not admin users can delete customers.
 
 
 
+
 # Runing the test
+
 
 
 The feature [Test.feature](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/Test.feature) us called from the [TestRunner.java](https://github.com/MariaExtrella/QATestTheAgileMonkeys/blob/main/apigraphql/src/test/java/test/graphql/TestRunner.java) class.
@@ -663,7 +696,10 @@ The test from Eclipse is running as a JUnit test:
 
 
 
+
+
 # Tests resutls
+
 
 
 The results of the test can be reviewed from the console:
