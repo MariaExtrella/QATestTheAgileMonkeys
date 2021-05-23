@@ -1,0 +1,44 @@
+# Results of the tests:
+
+
+From these test I have detected some issues:
+
+# 1 – When a user with a wrong password is created, the response has the correct message 
+
+  * 00:59:38.132 over-writing existing variable 'expected' with new value: { "message": "Password does not conform to policy: Password must have symbol characters" } 
+
+but if the same user is tried to saved with a correct password, it isn't possible because the username already exists:
+
+
+[{"path":["SaveUser"],"locations":[{"line":2,"column":5}],"message":"An account with the given email already exists."}] 
+
+and it is necessary to delete the user to be able to save it with that username, although with a UserReadModels query it isn't listed.
+
+
+# 2 – When a customer is saved, the photo field isn't saved properly and with a query of ReadCustomerModels it is allways displayed as an empty field “”:
+
+  * 00:59:14.253 [print] [ { "photoUrl": "", "surname": "surname changed", "name": "name changed", "id": "CustNotAdmin2", "userId": "userNotAdmin@test.com" } 
+
+so, when a customer is updated with a new photo, it isn't possible to test if the photo is properly updated or it isn't.
+
+
+# 3 – When delete a customer, it doesn't check if the customer exists or not and allways response with:
+
+  **
+  {"data":{"DeleteCustomer":true}} 
+
+
+# 4 – When saving a new customer, mandatory fields name and surname are allowed to be empty and the customer is saved with null values:
+
+    **{"photoUrl":"","surname":null,"name":null,"id":"Customer_id","userId":"admin@theagilemonkeys.com"} 
+
+I attach the karate reports directory that I have before the tests.
+
+
+# 5 – I only have tested in the 'Prod' environmet because in 'Dev' I  get a token, but when I try to post a graphql query with the authorizatiion token I get an error and I don't know if it is a default of the application or mine:	
+
+   ** [{"message":"JsonWebTokenError: error in secret or public key callback: Unable to find a signing key that matches 'GksPOoCVGwocLWDNgKo5Q4GubDSTWLMx8GaRfHV/E7A='"}] 
+
+
+
+I have empty the users and customers list so you can run the test if you want.
