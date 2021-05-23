@@ -26,7 +26,7 @@ To execute this test, it is needed to have installed:
 
 
 
-For the test a maven project in Eclipse is created using the Karate Maven archetype, because it is easier fto have already the project skeleton, but as it is said in the oficial respository of [Karate](https://intuit.github.io/karate), it is possible to do with one command:
+For the test, a maven project in Eclipse is created using the Karate Maven archetype, because it is easier to have already the project skeleton, but as it is said in the oficial respository of [Karate](https://intuit.github.io/karate), it is possible to do with one command:
 
       mvn archetype:generate \
       -DarchetypeGroupId=com.intuit.karate \
