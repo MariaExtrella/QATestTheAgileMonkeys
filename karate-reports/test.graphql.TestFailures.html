@@ -1,0 +1,2715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <title>test.graphql.TestFailures</title>  
+  </head>
+  <body>   
+    <div id="root-container">
+      <div id="leftnav">
+                
+        <div>
+  <div class="nav-logo">
+    <a href="karate-summary.html">
+      <img src="karate-logo.svg" alt="Karate"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">0</div>
+      <div id="nav-fail" class="bg-danger">1</div>
+    </div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>         
+  <div id="nav-date">
+    <div>2021-05-21 01:27:56 a. m.</div>
+  </div>        
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item failed">
+            <a href="#[1:6]"><span>[1:6]</span> <span>Test if the API met the acceptance criteria for an admin user</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">test/graphql/TestFailures.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Test the graphql API for admin and not admin users in wrong cases</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:6]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:6]</span>
+                <span class="scenario-name">Test if the API met the acceptance criteria for an admin user</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>19425</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:6]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:6]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url httpUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">01:27:36.563 karate.env system property was: prod 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># It is necessary to sign in the API as admin to create a new user</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Read the admin datas from a *.json file</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def adminDatas = read(&#39;signinDatasUser.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">45</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">### Call the feature to sign in the API with the JSON file that contains the admin&#39;s datas</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def signIn = call read(&#39;signin.feature&#39;) adminDatas</span>
+      </div>
+    </div>
+    <div class="time-cell passed">811</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.12.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">test.graphql.signin</div>
+      </div>
+      <div class="time-cell passed">794</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url httpUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def query =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.12.0.call.0.7">{
+  		&quot;clientId&quot;: &quot;#(clientId)&quot;,
+        &quot;username&quot;: &quot;#(username)&quot;,
+  		&quot;password&quot;: &quot;#(password)&quot;
+	}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.15">
+      <div class="step-ref passed">15</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print query</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12.0.call.0.15">01:27:36.659 [print] {
+  &quot;clientId&quot;: &quot;799hogucm363v55l7dk2n1l5u0&quot;,
+  &quot;username&quot;: &quot;admin@theagilemonkeys.com&quot;,
+  &quot;password&quot;: &quot;Admin.2020&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.17">
+      <div class="step-ref passed">17</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/auth/sign-in&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">7</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.18">
+      <div class="step-ref passed">18</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request query</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.19">
+      <div class="step-ref passed">19</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Content-Type = &#39;application/json&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.20">
+      <div class="step-ref passed">20</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">777</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12.0.call.0.20">01:27:36.899 request:
+1 &gt; POST https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/auth/sign-in
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 104
+1 &gt; Host: pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;password&quot;:&quot;Admin.2020&quot;,&quot;clientId&quot;:&quot;799hogucm363v55l7dk2n1l5u0&quot;,&quot;username&quot;:&quot;admin@theagilemonkeys.com&quot;}
+
+01:27:37.443 response time in milliseconds: 541
+1 &lt; 200
+1 &lt; Content-Type: application/json
+1 &lt; Content-Length: 4011
+1 &lt; Connection: keep-alive
+1 &lt; Date: Thu, 20 May 2021 23:27:37 GMT
+1 &lt; x-amzn-RequestId: 13d9bf69-5523-46ca-8d6b-0ba30fc542ed
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; x-amz-apigw-id: fpqAcGwODoEF0cw=
+1 &lt; X-Amzn-Trace-Id: Root=1-60a6f069-2317e870699b74022324d859
+1 &lt; X-Cache: Miss from cloudfront
+1 &lt; Via: 1.1 c5c852ebeabe49b08625d425153869fe.cloudfront.net (CloudFront)
+1 &lt; X-Amz-Cf-Pop: MAD51-C2
+1 &lt; X-Amz-Cf-Id: GZw_fVN0-BK86a2L8bV1S9XnZHsNXQUfjhpfaBRliZBkqqylfVkviw==
+{&quot;expiresIn&quot;:&quot;3600&quot;,&quot;idToken&quot;:&quot;eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIxYTEyOTA0OS1lZjUwLTQ3YWItOTI4Yi05MmMzZGE3OTA3ZTUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMTU1MzI1NywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMTU1Njg1NywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMTU1MzI1NywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.yDotfIip7crQ7w5Z78nlMH-vqPU14k1xb95qBkqKhyzmLfA0I0903iePpWwfV80QQYFh1MMjLjMC7frT-xeY0C2KzK-rRMrCO95Tl374Cn6NA2xwfjl6dFX6HolNP1bywggnGKYmkrcjPDM_1fvRexv3Ya8kNkbk2tqb-zDeMe3IG4S_6uhPaushe9s1oLeoQF750OOegkq6Rli5y6TWaPCF_y-vwPhT2Mv0kJkqj8u_P6jKCuaHMLM0FRq1n1VLZW6Z22usYPGfOq58_mGY4h7i_PHN-wJfEjuyu-dUurrDcSQjgHuDb1INQzq3x_eUKzKzGWrybHBtNDLlVDD1og&quot;,&quot;accessToken&quot;:&quot;eyJraWQiOiJIcWFQSnUyR1YzN1F5TnBnVlIwSXRHRHJqQ3huZk41aEFvK1ZmZGNtNDBVPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJldmVudF9pZCI6IjFhMTI5MDQ5LWVmNTAtNDdhYi05MjhiLTkyYzNkYTc5MDdlNSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2MjE1NTMyNTcsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS13ZXN0LTEuYW1hem9uYXdzLmNvbVwvZXUtd2VzdC0xX21IdWVBcjJRdSIsImV4cCI6MTYyMTU1Njg1NywiaWF0IjoxNjIxNTUzMjU3LCJqdGkiOiIwODJjMDhkNC05YzAyLTRmMGEtYTRkYy0yYTI0MzQyMjg2ZGYiLCJjbGllbnRfaWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsInVzZXJuYW1lIjoiYWViM2YyYTctM2U5ZS00YTk3LWFjZTgtZmU0MWFkMTE4ODkwIn0.FyLl6A1rjpT3AEErLxxHLsdUnuWHXsw39Ad4g3F-VxVD5dPHyHs7bIaMfFDJ53kDxBCALpQEOtOmbvv44tN9u7eonxyEndKRYe6uhz15oQdGs29srq26jLkTA3exPGI8bZ0fCnIouyMSP48BAvbnu2xJWJm_kh-J5vTlEjMD2NU1kdxLq5VUHOb6G4OH19nvZ_vtTDnJYKIVewfJo2BF6bRjV3Jaf-TymnA4jhPFfU6V6FL7-T3rrHa6BE3Fu4cInvUwKth79bFZ6_2DyuEbxL8-Kjg-S42gqCq6R9c8RkthC0DOFwCZnzLPXhNa18wmP3swNhY6crqatMvWsLzSzg&quot;,&quot;tokenType&quot;:&quot;Bearer&quot;,&quot;refreshToken&quot;:&quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.InYiJQw6EiAJzjHj6lxVQgLzqj0FMqbs0X9Nc-rAuRsdr2NP8hRpbKsqhIajXXpNgDuzjxh-LgXG6oLqKHh4YZdO-zAGVcFTIptsbP7oKy9eJOwiGuagQH2JtL7ri9XzwuymXpz4WdvAawvLBiZxGAAqIIwF9sm0u2nI-5RWkPolmrUcvh0jXdk7j52-S3mQYOyZ4TQ58JG7HwAqx3Q6oeEWXGWGtwA9tAHn9HCi9y8w-DhN1TPTIAeLvy75e6U98xDsOPp29UjCE4Bt6os8wwaJ4XQ17jjt4YPEM5Pevhz-BE0Il8lF-oM_xActMds774KJuTiUj2mPiOEPJcIh7g.BLlZ-ZoJKXy0JnYp.Hj8LRJA41foxduFyxJN4BC8bJKHRLNKYQ8XxmH2Go9cWK_i1WU4zqM0FnCOOAaT3Uj0-3y29a0AZHaAzMqfDdYOFMYdr8bhO7QB9xmLq3cdRrtdVcr9n1KYQQ_XDFuW_p870gpH92jKoAU7gFl99esZu2BqYdlRb3uvJTs--k1_AVd8qQHM1ZZFwaLAMQPNsaXEyathYkbANzkFZ7tDVv3oCSXD1m8OOSlywy0yDelKnaamBD5hCkd9P0kPHRPCG1HLyXkAZ5H3AY7g-ZKZbSVZjDq89FQtb1YeVQJ-HqD3bZtW5W0LTPWPT1jpNPq23MPbz-ffAacfk8T7uDXxrG30-mlPov6wBZ-nUlSw1tYzOiR0VmvTXm9My_EqjszXNyKUDkd0mjO4LGHRN8shGEncCZIA7w3_y5JRzBUyiwqH8G_qiMGIEumfuhKMaO0crKHjDpD3-7R9whE5b-dmg0c0sj0XzMD_hEArJ65xyiecbYJq4Qq-_JAx-BJ_bQb0fPFN0M7XOMlyK24HRsni1PYE49pZervwWvMvpt6wlqtyyZ4cdvTojSSPiYY-HlBP2eQbccUQd1oXwuG84oQT5hxgVUko99B4ryeXNH55x21xwUgypwqXmurG0aisH0wTDXceJp9_ck_84pWR4hYqlCU3u3HK9dEX0RTwZisDFH3FzFfv5PQAxuddli8IMI8B4CDQ8k0QjS3eKO9BxDdMEbd8t_E6o5eRynV6uu2pFrOKEH5FuR0F7XX3VzGYe7Cpr9Cje3WV78KfeoGdKf3URu-DkIKd06gkditXrhGXXg4ibtgI8Z6ZvqPF7c32-t298TVssJrd7LIhqTxDaqWFnVcLfJ6MzuWfXW3J62SGemRleTXDgdIpf8TTkFZJZgB4rUwmfQZOnVNZIujFnMQ_yt9VcFK2SsrA90E95Ra9dj0dp4QyWY3wcVnaOPM85QJsKpQGhNrxkoLziiasaHL84QyDp1Km0zh9_S9ZQrqT9YIeRjJETPiZX73AtUjlEgPSRf3z2fdb2OOgx2wvEePuXnG0wkIiHsxfYZf29yzXefLU1yc3lpOH9Y4-W9EhYNUgF7iwaVQYYdpAhshbrcC7g9rYO-OQI2nHOy6BUcqchG4-eAXylLE72esuPJdF8o7ThTL8tY8_kaqdlLzvttVBqfX4T6r9_ddkPh_CQYTunGf5nKDz5jMFGEEzm_73gAYl51-mjJqk7Kl5F9aDptrGU2v71QtmELAUEvwOJn7QDuaBi1cwVX8oNwVmTotbl9i0dXL5-koURFGYLXzNQbU_A3mn20ey_Sq3QrbdkIbaHseRAPqfEckBm-xgdk3Que68.dYK0uN3UPnQ79oJEvxpkdQ&quot;}
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.21">
+      <div class="step-ref passed">21</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment">#Get the idToken for the user</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.24">
+      <div class="step-ref passed">24</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def tokenid = response.idToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.12.0.call">
+    <div class="step-container" id="0.12.0.call.0.25">
+      <div class="step-ref passed">25</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print tokenid</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12.0.call.0.25">01:27:37.448 [print] eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIxYTEyOTA0OS1lZjUwLTQ3YWItOTI4Yi05MmMzZGE3OTA3ZTUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMTU1MzI1NywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMTU1Njg1NywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMTU1MzI1NywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.yDotfIip7crQ7w5Z78nlMH-vqPU14k1xb95qBkqKhyzmLfA0I0903iePpWwfV80QQYFh1MMjLjMC7frT-xeY0C2KzK-rRMrCO95Tl374Cn6NA2xwfjl6dFX6HolNP1bywggnGKYmkrcjPDM_1fvRexv3Ya8kNkbk2tqb-zDeMe3IG4S_6uhPaushe9s1oLeoQF750OOegkq6Rli5y6TWaPCF_y-vwPhT2Mv0kJkqj8u_P6jKCuaHMLM0FRq1n1VLZW6Z22usYPGfOq58_mGY4h7i_PHN-wJfEjuyu-dUurrDcSQjgHuDb1INQzq3x_eUKzKzGWrybHBtNDLlVDD1og 
+</div>   
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref passed">13</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print signIn.response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.13">01:27:37.453 [print] {
+  &quot;expiresIn&quot;: &quot;3600&quot;,
+  &quot;idToken&quot;: &quot;eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIxYTEyOTA0OS1lZjUwLTQ3YWItOTI4Yi05MmMzZGE3OTA3ZTUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMTU1MzI1NywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMTU1Njg1NywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMTU1MzI1NywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.yDotfIip7crQ7w5Z78nlMH-vqPU14k1xb95qBkqKhyzmLfA0I0903iePpWwfV80QQYFh1MMjLjMC7frT-xeY0C2KzK-rRMrCO95Tl374Cn6NA2xwfjl6dFX6HolNP1bywggnGKYmkrcjPDM_1fvRexv3Ya8kNkbk2tqb-zDeMe3IG4S_6uhPaushe9s1oLeoQF750OOegkq6Rli5y6TWaPCF_y-vwPhT2Mv0kJkqj8u_P6jKCuaHMLM0FRq1n1VLZW6Z22usYPGfOq58_mGY4h7i_PHN-wJfEjuyu-dUurrDcSQjgHuDb1INQzq3x_eUKzKzGWrybHBtNDLlVDD1og&quot;,
+  &quot;accessToken&quot;: &quot;eyJraWQiOiJIcWFQSnUyR1YzN1F5TnBnVlIwSXRHRHJqQ3huZk41aEFvK1ZmZGNtNDBVPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJldmVudF9pZCI6IjFhMTI5MDQ5LWVmNTAtNDdhYi05MjhiLTkyYzNkYTc5MDdlNSIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYXdzLmNvZ25pdG8uc2lnbmluLnVzZXIuYWRtaW4iLCJhdXRoX3RpbWUiOjE2MjE1NTMyNTcsImlzcyI6Imh0dHBzOlwvXC9jb2duaXRvLWlkcC5ldS13ZXN0LTEuYW1hem9uYXdzLmNvbVwvZXUtd2VzdC0xX21IdWVBcjJRdSIsImV4cCI6MTYyMTU1Njg1NywiaWF0IjoxNjIxNTUzMjU3LCJqdGkiOiIwODJjMDhkNC05YzAyLTRmMGEtYTRkYy0yYTI0MzQyMjg2ZGYiLCJjbGllbnRfaWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsInVzZXJuYW1lIjoiYWViM2YyYTctM2U5ZS00YTk3LWFjZTgtZmU0MWFkMTE4ODkwIn0.FyLl6A1rjpT3AEErLxxHLsdUnuWHXsw39Ad4g3F-VxVD5dPHyHs7bIaMfFDJ53kDxBCALpQEOtOmbvv44tN9u7eonxyEndKRYe6uhz15oQdGs29srq26jLkTA3exPGI8bZ0fCnIouyMSP48BAvbnu2xJWJm_kh-J5vTlEjMD2NU1kdxLq5VUHOb6G4OH19nvZ_vtTDnJYKIVewfJo2BF6bRjV3Jaf-TymnA4jhPFfU6V6FL7-T3rrHa6BE3Fu4cInvUwKth79bFZ6_2DyuEbxL8-Kjg-S42gqCq6R9c8RkthC0DOFwCZnzLPXhNa18wmP3swNhY6crqatMvWsLzSzg&quot;,
+  &quot;tokenType&quot;: &quot;Bearer&quot;,
+  &quot;refreshToken&quot;: &quot;eyJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiUlNBLU9BRVAifQ.InYiJQw6EiAJzjHj6lxVQgLzqj0FMqbs0X9Nc-rAuRsdr2NP8hRpbKsqhIajXXpNgDuzjxh-LgXG6oLqKHh4YZdO-zAGVcFTIptsbP7oKy9eJOwiGuagQH2JtL7ri9XzwuymXpz4WdvAawvLBiZxGAAqIIwF9sm0u2nI-5RWkPolmrUcvh0jXdk7j52-S3mQYOyZ4TQ58JG7HwAqx3Q6oeEWXGWGtwA9tAHn9HCi9y8w-DhN1TPTIAeLvy75e6U98xDsOPp29UjCE4Bt6os8wwaJ4XQ17jjt4YPEM5Pevhz-BE0Il8lF-oM_xActMds774KJuTiUj2mPiOEPJcIh7g.BLlZ-ZoJKXy0JnYp.Hj8LRJA41foxduFyxJN4BC8bJKHRLNKYQ8XxmH2Go9cWK_i1WU4zqM0FnCOOAaT3Uj0-3y29a0AZHaAzMqfDdYOFMYdr8bhO7QB9xmLq3cdRrtdVcr9n1KYQQ_XDFuW_p870gpH92jKoAU7gFl99esZu2BqYdlRb3uvJTs--k1_AVd8qQHM1ZZFwaLAMQPNsaXEyathYkbANzkFZ7tDVv3oCSXD1m8OOSlywy0yDelKnaamBD5hCkd9P0kPHRPCG1HLyXkAZ5H3AY7g-ZKZbSVZjDq89FQtb1YeVQJ-HqD3bZtW5W0LTPWPT1jpNPq23MPbz-ffAacfk8T7uDXxrG30-mlPov6wBZ-nUlSw1tYzOiR0VmvTXm9My_EqjszXNyKUDkd0mjO4LGHRN8shGEncCZIA7w3_y5JRzBUyiwqH8G_qiMGIEumfuhKMaO0crKHjDpD3-7R9whE5b-dmg0c0sj0XzMD_hEArJ65xyiecbYJq4Qq-_JAx-BJ_bQb0fPFN0M7XOMlyK24HRsni1PYE49pZervwWvMvpt6wlqtyyZ4cdvTojSSPiYY-HlBP2eQbccUQd1oXwuG84oQT5hxgVUko99B4ryeXNH55x21xwUgypwqXmurG0aisH0wTDXceJp9_ck_84pWR4hYqlCU3u3HK9dEX0RTwZisDFH3FzFfv5PQAxuddli8IMI8B4CDQ8k0QjS3eKO9BxDdMEbd8t_E6o5eRynV6uu2pFrOKEH5FuR0F7XX3VzGYe7Cpr9Cje3WV78KfeoGdKf3URu-DkIKd06gkditXrhGXXg4ibtgI8Z6ZvqPF7c32-t298TVssJrd7LIhqTxDaqWFnVcLfJ6MzuWfXW3J62SGemRleTXDgdIpf8TTkFZJZgB4rUwmfQZOnVNZIujFnMQ_yt9VcFK2SsrA90E95Ra9dj0dp4QyWY3wcVnaOPM85QJsKpQGhNrxkoLziiasaHL84QyDp1Km0zh9_S9ZQrqT9YIeRjJETPiZX73AtUjlEgPSRf3z2fdb2OOgx2wvEePuXnG0wkIiHsxfYZf29yzXefLU1yc3lpOH9Y4-W9EhYNUgF7iwaVQYYdpAhshbrcC7g9rYO-OQI2nHOy6BUcqchG4-eAXylLE72esuPJdF8o7ThTL8tY8_kaqdlLzvttVBqfX4T6r9_ddkPh_CQYTunGf5nKDz5jMFGEEzm_73gAYl51-mjJqk7Kl5F9aDptrGU2v71QtmELAUEvwOJn7QDuaBi1cwVX8oNwVmTotbl9i0dXL5-koURFGYLXzNQbU_A3mn20ey_Sq3QrbdkIbaHseRAPqfEckBm-xgdk3Que68.dYK0uN3UPnQ79oJEvxpkdQ&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># The token for the admin user is the input parameter for the callable feature where are defined the steps of the tests</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def userToken = signIn.response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">### Test to create a user with a wrong password</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newUser =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.18">{ 
+	&quot;username&quot;: &quot;userNotAdmin@test.com&quot;, 
+	&quot;password&quot;: &quot;Pass&quot;, 
+	&quot;role&quot;: &quot;user&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#    * def saveUser = call read(&#39;SaveUser.feature&#39;) userToken</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Check that the query fail because the password is too short</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def expected =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.28">{
+   &quot;message&quot;: &quot;Password does not conform to policy: Password not long enough&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#     * match saveUser.response.errors contains deep expected</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Try to create again but with another wrong password</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newUser =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.37">{ 
+	&quot;username&quot;: &quot;userNotAdmin@test.com&quot;, 
+	&quot;password&quot;: &quot;Password111&quot;, 
+	&quot;role&quot;: &quot;User&quot;
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="0.37">01:27:37.455 over-writing existing variable &#39;newUser&#39; with new value: { 
+	&quot;username&quot;: &quot;userNotAdmin@test.com&quot;, 
+	&quot;password&quot;: &quot;Password111&quot;, 
+	&quot;role&quot;: &quot;User&quot;
+}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#     * def saveUser = call read(&#39;SaveUser.feature&#39;) userToken</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Check that the query fail because the password is too short</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def expected =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.47">{
+   &quot;message&quot;: &quot;Password does not conform to policy: Password must have symbol characters&quot;
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="0.47">01:27:37.456 over-writing existing variable &#39;expected&#39; with new value: {
+   &quot;message&quot;: &quot;Password does not conform to policy: Password must have symbol characters&quot;
+}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#     * match saveUser.response.errors contains deep expected</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Try to create a new user with the role empty</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newUser =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.57">{ 
+	&quot;username&quot;: &quot;userNotAdmin@test.com&quot;, 
+	&quot;password&quot;: &quot;Password_1&quot; 
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="0.57">01:27:37.456 over-writing existing variable &#39;newUser&#39; with new value: { 
+	&quot;username&quot;: &quot;userNotAdmin@test.com&quot;, 
+	&quot;password&quot;: &quot;Password_1&quot; 
+}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def saveUser = call read(&#39;SaveUser.feature&#39;) userToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5166</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.64.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">test.graphql.SaveUser</div>
+      </div>
+      <div class="time-cell passed">5147</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url httpUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Define a function to introduce a sleep in the test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def wait = function(pause){ java.lang.Thread.sleep(pause) }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># The query is read from a *.graphql file</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.11">
+      <div class="step-ref passed">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def querySaveUser = read(&#39;SaveUser.graphql&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.13">
+      <div class="step-ref passed">13</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;graphql&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.14">
+      <div class="step-ref passed">14</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Authorization = userToken.tokenType + &#39; &#39; + userToken.idToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">13</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.16">
+      <div class="step-ref passed">16</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { query: &#39;#(querySaveUser)&#39;,  variables: &#39;#(newUser)&#39;  }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.17">
+      <div class="step-ref passed">17</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1106</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.64.0.call.0.17">01:27:37.485 request:
+1 &gt; POST https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql
+1 &gt; Authorization: Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIxYTEyOTA0OS1lZjUwLTQ3YWItOTI4Yi05MmMzZGE3OTA3ZTUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMTU1MzI1NywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMTU1Njg1NywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMTU1MzI1NywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.yDotfIip7crQ7w5Z78nlMH-vqPU14k1xb95qBkqKhyzmLfA0I0903iePpWwfV80QQYFh1MMjLjMC7frT-xeY0C2KzK-rRMrCO95Tl374Cn6NA2xwfjl6dFX6HolNP1bywggnGKYmkrcjPDM_1fvRexv3Ya8kNkbk2tqb-zDeMe3IG4S_6uhPaushe9s1oLeoQF750OOegkq6Rli5y6TWaPCF_y-vwPhT2Mv0kJkqj8u_P6jKCuaHMLM0FRq1n1VLZW6Z22usYPGfOq58_mGY4h7i_PHN-wJfEjuyu-dUurrDcSQjgHuDb1INQzq3x_eUKzKzGWrybHBtNDLlVDD1og
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 243
+1 &gt; Host: pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;variables&quot;:{&quot;password&quot;:&quot;Password_1&quot;,&quot;username&quot;:&quot;userNotAdmin@test.com&quot;},&quot;query&quot;:&quot;mutation SaveUser($username: String, $password: String, $role: String) {\r\n    SaveUser(input: {username: $username, password: $password, role: $role})\r\n} &quot;}
+
+01:27:38.587 response time in milliseconds: 1101
+1 &lt; 200
+1 &lt; Content-Type: application/json
+1 &lt; Content-Length: 26
+1 &lt; Connection: keep-alive
+1 &lt; Date: Thu, 20 May 2021 23:27:38 GMT
+1 &lt; x-amzn-RequestId: bd44560f-e1f5-4c89-8d92-8cadfc635298
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; x-amz-apigw-id: fpqAgGTyDoEFdVA=
+1 &lt; X-Amzn-Trace-Id: Root=1-60a6f069-5d6672691a2fd0af73cb50a7;Sampled=0
+1 &lt; X-Cache: Miss from cloudfront
+1 &lt; Via: 1.1 59f22b7f31477bb26619c4c93f750e06.cloudfront.net (CloudFront)
+1 &lt; X-Amz-Cf-Pop: MAD51-C2
+1 &lt; X-Amz-Cf-Id: p2oq35XNeTYaPyKBJgq3unpfoNzwa1NdcJ1K2nTB1-jYKKxJOl5NLQ==
+{&quot;data&quot;:{&quot;SaveUser&quot;:true}}
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.18">
+      <div class="step-ref passed">18</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Introduce a pause so the user can be saved before the next test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.20">
+      <div class="step-ref passed">20</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>wait(4000)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4022</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># if the response status is not 200, the test finish</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.64.0.call">
+    <div class="step-container" id="0.64.0.call.0.23">
+      <div class="step-ref passed">23</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (responseStatus != 200) karate.abort()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># The user is created and the default value fo the role is &#39;User&#39;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.66">
+      <div class="step-ref passed">66</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match saveUser.response.errors == &#39;#notpresent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">8</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Try to create a new user whith a username that already exist</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.70">
+      <div class="step-ref passed">70</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newUser =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.70">{ 
+	&quot;username&quot;: &quot;userNotAdmin@test.com&quot;, 
+	&quot;password&quot;: &quot;Password_1&quot;,
+	&quot;role&quot;: &quot;User&quot;
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="0.70">01:27:42.630 over-writing existing variable &#39;newUser&#39; with new value: { 
+	&quot;username&quot;: &quot;userNotAdmin@test.com&quot;, 
+	&quot;password&quot;: &quot;Password_1&quot;,
+	&quot;role&quot;: &quot;User&quot;
+}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.78">
+      <div class="step-ref passed">78</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def saveUser = call read(&#39;SaveUser.feature&#39;) userToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4691</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.78.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">test.graphql.SaveUser</div>
+      </div>
+      <div class="time-cell passed">4677</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url httpUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.78.0.call.0.4">01:27:42.631 over-writing existing variable &#39;saveUser&#39; with new value: call read(&#39;SaveUser.feature&#39;) userToken
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Define a function to introduce a sleep in the test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def wait = function(pause){ java.lang.Thread.sleep(pause) }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># The query is read from a *.graphql file</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.11">
+      <div class="step-ref passed">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def querySaveUser = read(&#39;SaveUser.graphql&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.13">
+      <div class="step-ref passed">13</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;graphql&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.14">
+      <div class="step-ref passed">14</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Authorization = userToken.tokenType + &#39; &#39; + userToken.idToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.16">
+      <div class="step-ref passed">16</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { query: &#39;#(querySaveUser)&#39;,  variables: &#39;#(newUser)&#39;  }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.17">
+      <div class="step-ref passed">17</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">657</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.78.0.call.0.17">01:27:42.645 request:
+1 &gt; POST https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql
+1 &gt; Authorization: Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIxYTEyOTA0OS1lZjUwLTQ3YWItOTI4Yi05MmMzZGE3OTA3ZTUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMTU1MzI1NywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMTU1Njg1NywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMTU1MzI1NywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.yDotfIip7crQ7w5Z78nlMH-vqPU14k1xb95qBkqKhyzmLfA0I0903iePpWwfV80QQYFh1MMjLjMC7frT-xeY0C2KzK-rRMrCO95Tl374Cn6NA2xwfjl6dFX6HolNP1bywggnGKYmkrcjPDM_1fvRexv3Ya8kNkbk2tqb-zDeMe3IG4S_6uhPaushe9s1oLeoQF750OOegkq6Rli5y6TWaPCF_y-vwPhT2Mv0kJkqj8u_P6jKCuaHMLM0FRq1n1VLZW6Z22usYPGfOq58_mGY4h7i_PHN-wJfEjuyu-dUurrDcSQjgHuDb1INQzq3x_eUKzKzGWrybHBtNDLlVDD1og
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 257
+1 &gt; Host: pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;variables&quot;:{&quot;password&quot;:&quot;Password_1&quot;,&quot;role&quot;:&quot;User&quot;,&quot;username&quot;:&quot;userNotAdmin@test.com&quot;},&quot;query&quot;:&quot;mutation SaveUser($username: String, $password: String, $role: String) {\r\n    SaveUser(input: {username: $username, password: $password, role: $role})\r\n} &quot;}
+
+01:27:43.298 response time in milliseconds: 652
+1 &lt; 200
+1 &lt; Content-Type: application/json
+1 &lt; Content-Length: 155
+1 &lt; Connection: keep-alive
+1 &lt; Date: Thu, 20 May 2021 23:27:43 GMT
+1 &lt; x-amzn-RequestId: 9c3e56d9-f36b-4172-9d30-406585f239b1
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; x-amz-apigw-id: fpqBUEhEDoEFSJA=
+1 &lt; X-Amzn-Trace-Id: Root=1-60a6f06e-2dc934763f7e6977479ef9f3;Sampled=0
+1 &lt; X-Cache: Miss from cloudfront
+1 &lt; Via: 1.1 84edc0906da5023aac71c5fb4a35cd89.cloudfront.net (CloudFront)
+1 &lt; X-Amz-Cf-Pop: MAD51-C2
+1 &lt; X-Amz-Cf-Id: yGAxktsFBSxKFw1mjN6KHU8Q4mwsGxHCzIP1BVQYvvVAvPC6MYoN4Q==
+{&quot;data&quot;:{&quot;SaveUser&quot;:null},&quot;errors&quot;:[{&quot;path&quot;:[&quot;SaveUser&quot;],&quot;locations&quot;:[{&quot;line&quot;:2,&quot;column&quot;:5}],&quot;message&quot;:&quot;An account with the given email already exists.&quot;}]}
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.18">
+      <div class="step-ref passed">18</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Introduce a pause so the user can be saved before the next test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.20">
+      <div class="step-ref passed">20</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>wait(4000)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4016</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># if the response status is not 200, the test finish</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.78.0.call">
+    <div class="step-container" id="0.78.0.call.0.23">
+      <div class="step-ref passed">23</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (responseStatus != 200) karate.abort()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Check that the default value is &#39;User&#39;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.80">
+      <div class="step-ref passed">80</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def expected =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.80">{
+   &quot;message&quot;:&quot;An account with the given email already exists.&quot;
+}</div>
+
+  
+
+  <div class="preformatted" data-parent="0.80">01:27:47.323 over-writing existing variable &#39;expected&#39; with new value: {
+   &quot;message&quot;:&quot;An account with the given email already exists.&quot;
+}
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.87">
+      <div class="step-ref passed">87</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match saveUser.response.errors contains deep expected</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">### Create a new customers without name and surname</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># It should fail because they are mandatory fields</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.91">
+      <div class="step-ref passed">91</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newCustomer =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.91">{
+   &quot;id&quot;: &quot;idCustomer&quot;
+}
+&quot;</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def saveCustomer = call read(&#39;SaveCustomer.feature&#39;) userToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4308</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.97.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">test.graphql.SaveCustomer</div>
+      </div>
+      <div class="time-cell passed">4296</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url httpUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Define a function to introduce a sleep in the test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def wait = function(pause){ java.lang.Thread.sleep(pause) }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># The query is read from a *.graphql file</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.11">
+      <div class="step-ref passed">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def querySaveCustomer = read(&#39;SaveCustomer.graphql&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># The body of the graphql request is a JSON with the generated values</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.14">
+      <div class="step-ref passed">14</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def newCust =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">10</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.97.0.call.0.14">{ 
+	&quot;id&quot;: &quot;#(first_customer.id)&quot;, 
+	&quot;name&quot;: &quot;#(first_customer.name)&quot;, 
+	&quot;surname&quot;: &quot;#(first_customer.surname)&quot;,
+	&quot;photo&quot;: &quot;#(first_customer.photo)&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.24">
+      <div class="step-ref passed">24</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;graphql&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.25">
+      <div class="step-ref passed">25</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Authorization = userToken.tokenType + &#39; &#39; + userToken.idToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.27">
+      <div class="step-ref passed">27</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { query: &#39;#(querySaveCustomer)&#39;,  variables: &#39;#(newCust)&#39;  }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.28">
+      <div class="step-ref passed">28</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">267</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.97.0.call.0.28">01:27:47.345 request:
+1 &gt; POST https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql
+1 &gt; Authorization: Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIxYTEyOTA0OS1lZjUwLTQ3YWItOTI4Yi05MmMzZGE3OTA3ZTUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMTU1MzI1NywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMTU1Njg1NywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMTU1MzI1NywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.yDotfIip7crQ7w5Z78nlMH-vqPU14k1xb95qBkqKhyzmLfA0I0903iePpWwfV80QQYFh1MMjLjMC7frT-xeY0C2KzK-rRMrCO95Tl374Cn6NA2xwfjl6dFX6HolNP1bywggnGKYmkrcjPDM_1fvRexv3Ya8kNkbk2tqb-zDeMe3IG4S_6uhPaushe9s1oLeoQF750OOegkq6Rli5y6TWaPCF_y-vwPhT2Mv0kJkqj8u_P6jKCuaHMLM0FRq1n1VLZW6Z22usYPGfOq58_mGY4h7i_PHN-wJfEjuyu-dUurrDcSQjgHuDb1INQzq3x_eUKzKzGWrybHBtNDLlVDD1og
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 330
+1 &gt; Host: pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;variables&quot;:{&quot;surname&quot;:&quot;#(first_customer.surname)&quot;,&quot;name&quot;:&quot;#(first_customer.name)&quot;,&quot;photo&quot;:&quot;#(first_customer.photo)&quot;,&quot;id&quot;:&quot;#(first_customer.id)&quot;},&quot;query&quot;:&quot;mutation SaveCustomer($id: ID, $name: String, $surname: String, $photo: String) {\r\n    SaveCustomer(input: {id: $id, name: $name, surname: $surname, photo: $photo})\r\n} &quot;}
+
+01:27:47.608 response time in milliseconds: 262
+1 &lt; 200
+1 &lt; Content-Type: application/json
+1 &lt; Content-Length: 30
+1 &lt; Connection: keep-alive
+1 &lt; Date: Thu, 20 May 2021 23:27:47 GMT
+1 &lt; x-amzn-RequestId: 7e9e970c-d645-4581-8f4a-96a6eda09343
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; x-amz-apigw-id: fpqCDGdwDoEFcRw=
+1 &lt; X-Amzn-Trace-Id: Root=1-60a6f073-1f84a25d6753804e3f0bbaf7;Sampled=0
+1 &lt; X-Cache: Miss from cloudfront
+1 &lt; Via: 1.1 cace9d3ed4c025b270cfeeb95eed0eab.cloudfront.net (CloudFront)
+1 &lt; X-Amz-Cf-Pop: MAD51-C2
+1 &lt; X-Amz-Cf-Id: 3MU3MqTdyRoeA-mhmQyNhMHN66NsuxVFhWjCU6hZMkPrNFeGAxWDiA==
+{&quot;data&quot;:{&quot;SaveCustomer&quot;:true}}
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.29">
+      <div class="step-ref passed">29</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Introduce a pause so the customer can be saved before the next test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.31">
+      <div class="step-ref passed">31</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>wait(4000)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4015</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># if the response status is not 200, the test finish</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.34">
+      <div class="step-ref passed">34</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (responseStatus != 200) karate.abort()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># If the customer is saved, the response shouldn&#39;t contain a field &quot;error&quot;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.97.0.call">
+    <div class="step-container" id="0.97.0.call.0.37">
+      <div class="step-ref passed">37</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.errors == &#39;#notpresent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#    * match saveCustomer.response.errors != &#39;#notpresent&#39;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">### Delete a customer who doesn&#39;t exist</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.102">
+      <div class="step-ref passed">102</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def customerDelete =</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  <div class="preformatted" data-parent="0.102">{
+   &quot;id&quot;: &quot;cusrtomerNotExist&quot;
+}</div>
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.108">
+      <div class="step-ref passed">108</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def deleteCustomer = call read(&#39;DeleteCustomer.feature&#39;) userToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4388</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.108.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">test.graphql.DeleteCustomer</div>
+      </div>
+      <div class="time-cell passed">4374</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url httpUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Define a function to introduce a sleep in the test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def wait = function(pause){ java.lang.Thread.sleep(pause) }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># The query is read from a *.graphql file</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.11">
+      <div class="step-ref passed">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def queryDeleteCustomer = read(&#39;DeleteCustomer.graphql&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.13">
+      <div class="step-ref passed">13</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;graphql&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.14">
+      <div class="step-ref passed">14</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>header Authorization = userToken.tokenType + &#39; &#39; + userToken.idToken</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.16">
+      <div class="step-ref passed">16</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request { query: &#39;#(queryDeleteCustomer)&#39;,  variables: &#39;#(customerDelete)&#39;  }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.17">
+      <div class="step-ref passed">17</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">358</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.108.0.call.0.17">01:27:51.647 request:
+1 &gt; POST https://pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com/test-qa-estrella-prod/graphql
+1 &gt; Authorization: Bearer eyJraWQiOiJHa3NQT29DVkd3b2NMV0ROZ0tvNVE0R3ViRFNUV0xNeDhHYVJmSFZcL0U3QT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhZWIzZjJhNy0zZTllLTRhOTctYWNlOC1mZTQxYWQxMTg4OTAiLCJhdWQiOiI3OTlob2d1Y20zNjN2NTVsN2RrMm4xbDV1MCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZXZlbnRfaWQiOiIxYTEyOTA0OS1lZjUwLTQ3YWItOTI4Yi05MmMzZGE3OTA3ZTUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTYyMTU1MzI1NywiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfbUh1ZUFyMlF1IiwiY29nbml0bzp1c2VybmFtZSI6ImFlYjNmMmE3LTNlOWUtNGE5Ny1hY2U4LWZlNDFhZDExODg5MCIsImV4cCI6MTYyMTU1Njg1NywiY3VzdG9tOnJvbGUiOiJBZG1pbiIsImlhdCI6MTYyMTU1MzI1NywiZW1haWwiOiJhZG1pbkB0aGVhZ2lsZW1vbmtleXMuY29tIn0.yDotfIip7crQ7w5Z78nlMH-vqPU14k1xb95qBkqKhyzmLfA0I0903iePpWwfV80QQYFh1MMjLjMC7frT-xeY0C2KzK-rRMrCO95Tl374Cn6NA2xwfjl6dFX6HolNP1bywggnGKYmkrcjPDM_1fvRexv3Ya8kNkbk2tqb-zDeMe3IG4S_6uhPaushe9s1oLeoQF750OOegkq6Rli5y6TWaPCF_y-vwPhT2Mv0kJkqj8u_P6jKCuaHMLM0FRq1n1VLZW6Z22usYPGfOq58_mGY4h7i_PHN-wJfEjuyu-dUurrDcSQjgHuDb1INQzq3x_eUKzKzGWrybHBtNDLlVDD1og
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 135
+1 &gt; Host: pnbbxqm2y9.execute-api.eu-west-1.amazonaws.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.13 (Java/16.0.1)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;variables&quot;:{&quot;id&quot;:&quot;cusrtomerNotExist&quot;},&quot;query&quot;:&quot;mutation DeleteCustomer($id: ID) {\r\n    DeleteCustomer(input: {id: $id})\r\n} \r\n&quot;}
+
+01:27:52.002 response time in milliseconds: 354
+1 &lt; 200
+1 &lt; Content-Type: application/json
+1 &lt; Content-Length: 32
+1 &lt; Connection: keep-alive
+1 &lt; Date: Thu, 20 May 2021 23:27:51 GMT
+1 &lt; x-amzn-RequestId: 19bccb04-66f4-4430-ab5e-95888b0480de
+1 &lt; Access-Control-Allow-Origin: *
+1 &lt; x-amz-apigw-id: fpqCuF2ojoEFnqw=
+1 &lt; X-Amzn-Trace-Id: Root=1-60a6f077-1e2ba2105a1d8c4d5a1eb754;Sampled=0
+1 &lt; X-Cache: Miss from cloudfront
+1 &lt; Via: 1.1 b89214703c5c60a107a07c982809a482.cloudfront.net (CloudFront)
+1 &lt; X-Amz-Cf-Pop: MAD51-C2
+1 &lt; X-Amz-Cf-Id: 9fgDmnfYHfrT3wtRFaReZR9NFfbBYspVT-bme875tP4h_0gFl1gRuQ==
+{&quot;data&quot;:{&quot;DeleteCustomer&quot;:true}}
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.18">
+      <div class="step-ref passed">18</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># Introduce a pause so the customer can be delete before the next test</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.20">
+      <div class="step-ref passed">20</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>wait(4000)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4011</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># if the response status is not 200, the test finish</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.23">
+      <div class="step-ref passed">23</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>if (responseStatus != 200) karate.abort()</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      <div class="step-indent"></div>
+      <div class="step-cell comment"># If the customer was delete, the response shouldn&#39;t contain a field &quot;error&quot;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row" data-parent="0.108.0.call">
+    <div class="step-container" id="0.108.0.call.0.26">
+      <div class="step-ref passed">26</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.errors == &#39;#notpresent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.109">
+      <div class="step-ref failed">109</div>
+      
+      <div class="step-cell failed">
+        <span>*</span>&nbsp;<span>match deleteCustomer.response.errors != &#39;#notpresent&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell failed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.109">01:27:56.022 classpath:test/graphql/TestFailures.feature:109
+* match deleteCustomer.response.errors != &#39;#notpresent&#39;
+match failed: NOT_EQUALS
+  $ | is equal (STRING:STRING)
+  &#39;#notpresent&#39;
+  &#39;#notpresent&#39;
+
+classpath:test/graphql/TestFailures.feature:109
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
